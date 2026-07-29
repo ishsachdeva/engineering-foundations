@@ -19,6 +19,19 @@
 - Completed CS50P Problem Set 1
 - Reviewed functions, variables, strings, numeric operations, user input and conditionals
 - Beginning independent applied projects
+- Completed Personal Project 0
+- Completed Project 1 – Decision Policy Classifier
+
+### Confidence Rating after Project 1
+
+### Confidence Rating after Project 1
+
+Functions ............. 7/10
+Conditionals .......... 7/10
+Input Validation ...... 7/10
+match-case ............ 7/10
+Git Basics ............ 6/10
+Debugging ............. 5/10
 
 ### Current capability assessment
 
@@ -26,4 +39,4 @@ Independent Python ability: approximately 0.5/5.
 
 I understand basic programming concepts and have previously created or modified a few VBA macros with external help. However, I have not programmed extensively, and my earlier exposure to programming languages is too old to count as a current working skill.
 
-My recent software projects have been developed primarily through AI-assisted coding. My objective is to become capable of understanding, testing, debugging, modifying and independently reconstructing the systems I build.
+My recent software projects have been developed primarily through AI-assisted coding. My objective is to become capable of independently designing, understanding, testing, debugging, modifying, and maintaining the software systems I build.
