@@ -1,6 +1,6 @@
 # Learning Log
 
-## 28 July 2026
+## 30 July 2026
 
 ### Environment established
 
@@ -11,32 +11,108 @@
 - Configured repository-specific Git identity
 - Confirmed that the virtual environment is excluded from Git
 
-### Current learning progress
+---
 
-- Completed CS50P Week 0
-- Completed CS50P Week 1
-- Completed CS50P Problem Set 0
-- Completed CS50P Problem Set 1
-- Reviewed functions, variables, strings, numeric operations, user input and conditionals
-- Beginning independent applied projects
-- Completed Personal Project 0
+## Current learning progress
+
+### CS50P
+
+- Completed Week 0
+- Completed Week 1
+- Completed Week 2
+
+### Problem Sets
+
+- Completed Problem Set 0
+- Completed Problem Set 1
+- Completed Problem Set 2
+
+### Personal Projects
+
+- Completed Project 0 – Operational Impact Calculator
 - Completed Project 1 – Decision Policy Classifier
+- Completed Project 2 – Batch Case Scanner
 
-### Confidence Rating after Project 1
+---
 
-### Confidence Rating after Project 1
+## Major concepts learned
 
-Functions ............. 7/10
-Conditionals .......... 7/10
-Input Validation ...... 7/10
-match-case ............ 7/10
-Git Basics ............ 6/10
-Debugging ............. 5/10
+### Project 0
 
-### Current capability assessment
+- Functions
+- Variables
+- User input
+- Numeric calculations
+- Returning values
+- Program decomposition
 
-Independent Python ability: approximately 0.5/5.
+### Project 1
 
-I understand basic programming concepts and have previously created or modified a few VBA macros with external help. However, I have not programmed extensively, and my earlier exposure to programming languages is too old to count as a current working skill.
+- Boolean expressions
+- if / elif / else
+- Business rule implementation
+- Decision trees
+- Basic input validation
+- match-case
 
-My recent software projects have been developed primarily through AI-assisted coding. My objective is to become capable of independently designing, understanding, testing, debugging, modifying, and maintaining the software systems I build.
+### Project 2
+
+- while loops
+- Loop control
+- Counters
+- Accumulators
+- Current-record variables
+- Tracking a running maximum
+- Maintaining program state across loop iterations
+- Separating algorithm design from implementation
+- Manual debugging using execution tracing
+
+---
+
+## Key lessons from Project 2
+
+- Every variable should have a single, well-defined responsibility.
+- Variables that represent batch state should be initialized outside the loop.
+- Current-record variables should only exist for one iteration.
+- Counters, accumulators, and current-record variables solve different problems.
+- Running totals should only be updated once per record.
+- The original input should be preserved if it will be needed later.
+- Reading the specification carefully prevents unnecessary engineering work.
+- Debugging should follow a structured process:
+  1. Fix syntax errors.
+  2. Make the program execute.
+  3. Verify correctness.
+  4. Refactor only after correctness is established.
+
+---
+
+## Confidence Rating after Project 2
+
+Functions .................. 8/10
+Variables .................. 8/10
+Conditionals ............... 8/10
+Loops ...................... 7/10
+Counters ................... 7/10
+Accumulators ............... 7/10
+Algorithm Design ........... 7/10
+Debugging .................. 6/10
+Git Basics ................. 6/10
+Program Decomposition ...... 7/10
+
+---
+
+## Current capability assessment
+
+Independent Python ability: approximately **1.0 / 5**
+
+I can independently design and implement small console programs that use functions, conditionals, loops, counters, accumulators, and simple state management. I can usually translate a high-level algorithm into working Python code and debug straightforward syntax and logical errors with guidance.
+
+I still rely on mentorship when designing cleaner program structures, reasoning about edge cases, identifying subtle logic bugs, and applying Python best practices. I have not yet learned collections, exception handling, file I/O, modules, testing, or object-oriented programming, so my ability is currently limited to small procedural programs.
+
+The current objective remains unchanged: develop the ability to independently design, build, debug, test, explain, refactor, and maintain production-quality software systems with minimal AI assistance.
+
+---
+
+## Overall Progress
+
+The focus is intentionally on building durable software engineering fundamentals rather than completing projects quickly. Every project is expected to reinforce algorithmic thinking, disciplined debugging, clean program structure, and incremental improvement before introducing more advanced concepts.
