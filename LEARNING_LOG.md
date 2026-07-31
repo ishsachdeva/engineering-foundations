@@ -20,6 +20,8 @@
 - Completed Week 0
 - Completed Week 1
 - Completed Week 2
+- Completed Week 3
+- Completed Week 4
 
 ### Problem Sets
 
@@ -27,6 +29,7 @@
 - Completed Problem Set 1
 - Completed Problem Set 2
 - Completed Problem Set 3
+- Completed Problem Set 4
 
 ### Personal Projects
 
@@ -34,6 +37,7 @@
 - Completed Project 1 – Decision Policy Classifier
 - Completed Project 2 – Batch Case Scanner
 - Completed Project 3 – Resilient Intake Validator
+- Completed Project 4 – Evidence Enricher
 
 ---
 
@@ -82,6 +86,19 @@
 - API thinking: separating function behavior from caller-specific data
 - Applying single responsibility at the function level
 
+### Project 4
+
+- Reading command-line arguments using `sys.argv`
+- Procedural data-processing pipelines
+- Using Python standard library modules (`statistics`, `uuid`, `datetime`)
+- Converting external string input into typed data
+- Reusable preprocessing functions
+- Exception-driven type conversion
+- Guard clauses for argument validation
+- Computing summary statistics using the standard library
+- Reusing computed values instead of unnecessary recalculation
+- Beginning to reason about API naming and function contracts
+
 ---
 
 ## Key lessons from Project 2
@@ -115,29 +132,81 @@
 
 ---
 
-## Confidence Rating after Project 3
+## Key lessons from Project 4
 
-Functions .................. 9/10
-Variables .................. 8/10
-Conditionals ............... 9/10
+- Command-line arguments are external input and should always be treated as untrusted data.
+- Parsing, validation, conversion, and computation are separate responsibilities.
+- Python exceptions should replace manual type checking when performing type conversions.
+- Standard library functions should be preferred over custom implementations whenever appropriate.
+- Good software engineering often means composing reliable building blocks instead of writing everything manually.
+- Function names communicate intent and should be chosen deliberately.
+- Refactoring requires verifying every use of renamed variables to avoid introducing defects.
+- Code reviews frequently involve trade-offs rather than absolute right or wrong answers.
+- Good engineering discussions focus on reasoning and maintainability rather than personal preference.
+
+---
+
+## Recurring Mistakes
+
+Current recurring patterns observed:
+
+- Initially attempting to manually verify conditions already guaranteed by Python instead of trusting language features.
+- Occasionally optimizing before fully understanding the data flow.
+- Spending excessive time searching for the "perfect" name instead of selecting a clear, defensible one.
+- Sometimes beginning implementation before validating every assumption against the specification.
+- Occasionally overlooking small defects introduced during refactoring (for example, renamed variables in return statements).
+
+---
+
+## Emerging Strengths
+
+- Reads feedback carefully instead of blindly applying suggestions.
+- Challenges design decisions using logical reasoning.
+- Increasingly reasons about program execution before writing code.
+- Comfortable decomposing procedural programs into small helper functions.
+- Makes good use of Python's standard library instead of reinventing existing functionality.
+- Shows growing curiosity about software engineering decisions instead of focusing only on syntax.
+
+---
+
+## Confidence Rating after Project 4
+
+Functions .................. 7/10
+Variables .................. 7/10
+Conditionals ............... 8/10
 Loops ...................... 8/10
-Input Validation ........... 9/10
+Input Validation ........... 8/10
 Exception Handling ......... 7/10
-Algorithm Design ........... 8/10
+Command-line Arguments ..... 7/10
+Standard Library Usage ..... 6/10
+Program Decomposition ...... 7/10
 Debugging .................. 7/10
-Git Basics ................. 7/10
-Program Decomposition ...... 9/10
-Code Organization .......... 8/10
+Code Organization .......... 7/10
+Engineering Reasoning ...... 8/10
 
 ---
 
 ## Current capability assessment
 
-Independent Python ability: approximately **1.5 / 5**
+### Python
 
-I can independently design and implement small console applications that use functions, parameters, conditionals, loops, exception handling, reusable validation routines, and procedural decomposition. I understand how to separate conversion from validation, write generic helper functions, recognize repeated implementation patterns, and explain the reasoning behind many design decisions instead of only producing working code.
+Independent Python ability: **1.5 / 5**
 
-I still require mentorship when identifying opportunities for abstraction, reducing duplication before implementation, designing larger program architectures, reasoning about more complex algorithms, testing systematically, and applying advanced Python idioms. I have not yet learned collections in depth, file I/O, modules, testing frameworks, decorators, generators, or object-oriented programming, so my experience remains focused on well-structured procedural programs.
+I can independently design and implement small procedural console applications that use functions, parameters, conditionals, loops, exception handling, reusable validation routines, command-line arguments, and standard library modules. I understand the importance of separating parsing, validation, conversion, and computation, and I am beginning to reason about function contracts and API design rather than simply writing working code.
+
+I still require mentorship when designing larger architectures, identifying higher-level abstractions, testing systematically, designing reusable modules, and applying more advanced Python language features such as dictionaries, comprehensions, generators, decorators, object-oriented programming, packaging, and automated testing.
+
+### Software Engineering
+
+Current Software Engineering ability: **1.8 / 5**
+
+I am beginning to think like an engineer instead of only a programmer. I increasingly question design decisions, defend implementation choices with reasoning, and recognize that software engineering often involves trade-offs rather than single correct answers. I can decompose small problems effectively but still require significant guidance when designing systems at a larger scale.
+
+### Software Architecture
+
+Current Architecture ability: **1.2 / 5**
+
+I understand basic functional decomposition and separation of responsibilities but have not yet developed experience with architectural patterns, layering, dependency management, interfaces, abstraction boundaries, coupling, cohesion, scalability, or maintainability at larger system sizes.
 
 The objective remains unchanged: develop the ability to independently design, build, debug, test, explain, refactor, and maintain production-quality software systems with minimal AI assistance while steadily developing the engineering judgment required for software architecture.
 
@@ -157,6 +226,7 @@ Each project is expected to strengthen:
 - Recognition of reusable patterns.
 - Clear separation of responsibilities.
 - Writing maintainable, readable, and reusable code.
+- Engineering judgment through deliberate code reviews and design discussions.
 
 Progress is measured by improvements in engineering judgment and independent problem-solving ability—not by the number of completed projects or lines of code written.
 
@@ -171,18 +241,20 @@ Progress is measured by improvements in engineering judgment and independent pro
 | 30 Jul 2026 | Project 1 – Decision Policy Classifier | `<commit>` | Learned business-rule implementation, conditionals, decision trees, and translating requirements into executable logic. |
 | 30 Jul 2026 | Project 2 – Batch Case Scanner | `<commit>` | Learned loops, counters, accumulators, current-record variables, state management, execution tracing, and structured debugging. |
 | 30 Jul 2026 | Project 3 – Resilient Intake Validator | `<commit>` | Learned reusable validation functions, exception handling, separation of conversion from validation, input sanitization, API-oriented function design, and recognizing common algorithms across multiple implementations. |
+| 31 Jul 2026 | Project 4 – Evidence Enricher | `<commit>` | Learned command-line argument processing, standard library usage (`statistics`, `uuid`, `datetime`), procedural data pipelines, exception-driven conversion, and iterative API design through code reviews. |
 
 ---
 
 ## Overall Engineering Progress
 
-| Stage | Python Rating | Focus |
-|--------|:-------------:|-------|
-| Repository Created | **0.5 / 5** | Learning basic Python syntax and procedural programming. |
-| After Project 0 | **0.7 / 5** | Writing simple functions and decomposing problems into smaller tasks. |
-| After Project 1 | **0.9 / 5** | Implementing business rules using conditionals and structured decision logic. |
-| After Project 2 | **1.0 / 5** | Managing program state with loops, counters, accumulators, and disciplined debugging. |
-| After Project 3 | **1.5 / 5** | Designing reusable helper functions, understanding exception handling, separating responsibilities, and beginning to think in terms of software engineering patterns instead of individual code snippets. |
+| Stage | Python Rating | Software Engineering | Architecture | Focus |
+|--------|:-------------:|:--------------------:|:------------:|-------|
+| Repository Created | **0.5 / 5** | **0.5 / 5** | **0.5 / 5** | Learning Python syntax and procedural programming fundamentals. |
+| After Project 0 | **0.7 / 5** | **0.7 / 5** | **0.6 / 5** | Functional decomposition, variables, calculations, and simple procedural design. |
+| After Project 1 | **0.9 / 5** | **1.0 / 5** | **0.7 / 5** | Translating specifications into business rules and structured decision logic. |
+| After Project 2 | **1.0 / 5** | **1.3 / 5** | **0.9 / 5** | Managing state, structured debugging, and recognizing algorithmic patterns. |
+| After Project 3 | **1.5 / 5** | **1.6 / 5** | **1.0 / 5** | Reusable validation routines, exception handling, and cleaner procedural decomposition. |
+| After Project 4 | **1.5 / 5** | **1.8 / 5** | **1.2 / 5** | Standard library usage, command-line processing, API reasoning, and stronger engineering discussions. |
 
 ---
 
@@ -192,6 +264,8 @@ The purpose of this repository is **not** to accumulate completed projects.
 
 Its purpose is to document the gradual development from beginner to software engineer through deliberate practice, rigorous code reviews, disciplined debugging, incremental improvement, and continuous reflection.
 
-Every project should leave behind evidence of improved engineering judgment, cleaner code organization, stronger problem decomposition, and greater independence than the previous one.
+Every project should leave behind evidence of improved engineering judgment, cleaner code organization, stronger problem decomposition, greater architectural thinking, and increased independence compared to the previous project.
 
 Success will be measured by the ability to independently design, build, explain, test, debug, refactor, and maintain production-quality software systems with minimal AI assistance.
+
+The long-term target is not merely becoming a Python developer. It is becoming a highly sought-after Software Engineer, Technical Consultant, and Software Architect capable of designing and reasoning about complex software systems with confidence, clarity, and sound engineering judgment.
