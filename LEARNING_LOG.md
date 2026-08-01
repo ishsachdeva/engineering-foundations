@@ -22,6 +22,7 @@
 - Completed Week 2
 - Completed Week 3
 - Completed Week 4
+- Completed Week 5
 
 ### Problem Sets
 
@@ -30,6 +31,7 @@
 - Completed Problem Set 2
 - Completed Problem Set 3
 - Completed Problem Set 4
+- Completed Problem Set 5
 
 ### Personal Projects
 
@@ -38,6 +40,7 @@
 - Completed Project 2 – Batch Case Scanner
 - Completed Project 3 – Resilient Intake Validator
 - Completed Project 4 – Evidence Enricher
+- Completed Project 5 – Decision Engine Test Harness
 
 ---
 
@@ -99,6 +102,21 @@
 - Reusing computed values instead of unnecessary recalculation
 - Beginning to reason about API naming and function contracts
 
+### Project 5
+
+- Unit testing using `pytest`
+- Behaviour-driven testing
+- Specification-first test design
+- Boundary value analysis
+- Equivalence class thinking
+- Regression testing
+- Exception testing using `pytest.raises`
+- Designing pure functions
+- Separating business logic from user interaction
+- Understanding software behaviour through automated tests
+- Viewing tests as executable specifications
+- Beginning to design software for testability rather than adding tests afterwards
+
 ---
 
 ## Key lessons from Project 2
@@ -146,6 +164,31 @@
 
 ---
 
+## Key lessons from Project 5
+
+- Tests should be derived directly from the specification rather than from arbitrary examples.
+- Behaviour is the software contract; implementation details are free to change.
+- A function either returns a value or raises an exception—it never returns an exception.
+- Automated tests protect against future regressions rather than simply proving today's implementation works.
+- Boundary values deserve explicit attention because defects frequently occur at decision thresholds.
+- Designing pure functions naturally improves software testability.
+- Separating business logic from user interaction produces cleaner and more maintainable software.
+- Passing tests increase confidence but never prove software is completely correct.
+- Testing is not a separate activity—it influences software design itself.
+- Well-designed software becomes easier to explain, modify, and verify.
+
+---
+
+## Biggest mindset shifts (Project 5)
+
+- I now begin by understanding the specification before thinking about implementation.
+- I increasingly think in terms of behavioural categories instead of isolated examples.
+- I have started viewing tests as executable specifications rather than verification scripts.
+- I understand that software should be designed to be testable instead of forcing tests around poor designs.
+- I now separate user interaction from business logic almost instinctively.
+
+---
+
 ## Recurring Mistakes
 
 Current recurring patterns observed:
@@ -155,6 +198,8 @@ Current recurring patterns observed:
 - Spending excessive time searching for the "perfect" name instead of selecting a clear, defensible one.
 - Sometimes beginning implementation before validating every assumption against the specification.
 - Occasionally overlooking small defects introduced during refactoring (for example, renamed variables in return statements).
+- Occasionally focusing on individual examples before identifying every behavioural category required by the specification.
+- Sometimes reasoning about boundary values before reasoning about the expected business behaviour.
 
 ---
 
@@ -166,23 +211,31 @@ Current recurring patterns observed:
 - Comfortable decomposing procedural programs into small helper functions.
 - Makes good use of Python's standard library instead of reinventing existing functionality.
 - Shows growing curiosity about software engineering decisions instead of focusing only on syntax.
+- Increasingly reasons from specifications instead of implementations.
+- Better at predicting program behaviour before execution.
+- Beginning to defend engineering decisions using trade-offs rather than searching for one "correct" answer.
+- Treats testing as part of software design rather than post-development verification.
 
 ---
 
-## Confidence Rating after Project 4
+## Confidence Rating after Project 5
 
-Functions .................. 7/10
+Functions .................. 8/10
 Variables .................. 7/10
 Conditionals ............... 8/10
 Loops ...................... 8/10
 Input Validation ........... 8/10
-Exception Handling ......... 7/10
+Exception Handling ......... 8/10
 Command-line Arguments ..... 7/10
 Standard Library Usage ..... 6/10
-Program Decomposition ...... 7/10
-Debugging .................. 7/10
-Code Organization .......... 7/10
-Engineering Reasoning ...... 8/10
+Program Decomposition ...... 8/10
+Debugging .................. 8/10
+Code Organization .......... 8/10
+Engineering Reasoning ...... 9/10
+Testing .................... 7/10
+Behavioural Testing ........ 7/10
+Specification Reading ...... 9/10
+Regression Thinking ........ 7/10
 
 ---
 
@@ -190,23 +243,33 @@ Engineering Reasoning ...... 8/10
 
 ### Python
 
-Independent Python ability: **1.5 / 5**
+Independent Python ability: **1.8 / 5**
 
-I can independently design and implement small procedural console applications that use functions, parameters, conditionals, loops, exception handling, reusable validation routines, command-line arguments, and standard library modules. I understand the importance of separating parsing, validation, conversion, and computation, and I am beginning to reason about function contracts and API design rather than simply writing working code.
+I can independently design and implement small procedural console applications that use functions, parameters, conditionals, loops, exception handling, reusable validation routines, command-line arguments, standard library modules, and automated unit tests.
 
-I still require mentorship when designing larger architectures, identifying higher-level abstractions, testing systematically, designing reusable modules, and applying more advanced Python language features such as dictionaries, comprehensions, generators, decorators, object-oriented programming, packaging, and automated testing.
+I increasingly separate parsing, validation, business logic, and presentation into independent responsibilities. I now understand that software contracts should drive both implementation and testing, and I have begun designing functions specifically to improve testability rather than treating testing as an afterthought.
+
+I still require mentorship when designing larger architectures, identifying reusable abstractions across multiple modules, working with persistent data, object-oriented programming, packaging, decorators, generators, comprehensions, concurrency, and production-scale software systems.
 
 ### Software Engineering
 
-Current Software Engineering ability: **1.8 / 5**
+Current Software Engineering ability: **2.1 / 5**
 
-I am beginning to think like an engineer instead of only a programmer. I increasingly question design decisions, defend implementation choices with reasoning, and recognize that software engineering often involves trade-offs rather than single correct answers. I can decompose small problems effectively but still require significant guidance when designing systems at a larger scale.
+I increasingly think like an engineer rather than simply a programmer.
+
+I begin by understanding specifications before implementation, reason about behavioural contracts instead of individual examples, and appreciate that engineering usually involves evaluating trade-offs rather than discovering a single correct solution.
+
+My debugging process is becoming more systematic and hypothesis-driven, and I increasingly justify implementation decisions using maintainability, readability, and separation of responsibilities.
+
+I still require significant mentorship when designing larger systems, identifying reusable abstractions, making architectural trade-offs, and independently organizing multi-module software.
 
 ### Software Architecture
 
 Current Architecture ability: **1.2 / 5**
 
-I understand basic functional decomposition and separation of responsibilities but have not yet developed experience with architectural patterns, layering, dependency management, interfaces, abstraction boundaries, coupling, cohesion, scalability, or maintainability at larger system sizes.
+No rating increase.
+
+Although my software design has improved considerably through cleaner decomposition and testable business logic, I have not yet demonstrated enough architectural thinking around layering, interfaces, dependency management, coupling, cohesion, scalability, or maintainability at larger system sizes to justify a higher rating.
 
 The objective remains unchanged: develop the ability to independently design, build, debug, test, explain, refactor, and maintain production-quality software systems with minimal AI assistance while steadily developing the engineering judgment required for software architecture.
 
@@ -226,6 +289,7 @@ Each project is expected to strengthen:
 - Recognition of reusable patterns.
 - Clear separation of responsibilities.
 - Writing maintainable, readable, and reusable code.
+- Designing software for testability.
 - Engineering judgment through deliberate code reviews and design discussions.
 
 Progress is measured by improvements in engineering judgment and independent problem-solving ability—not by the number of completed projects or lines of code written.
@@ -242,6 +306,7 @@ Progress is measured by improvements in engineering judgment and independent pro
 | 30 Jul 2026 | Project 2 – Batch Case Scanner | `<commit>` | Learned loops, counters, accumulators, current-record variables, state management, execution tracing, and structured debugging. |
 | 30 Jul 2026 | Project 3 – Resilient Intake Validator | `<commit>` | Learned reusable validation functions, exception handling, separation of conversion from validation, input sanitization, API-oriented function design, and recognizing common algorithms across multiple implementations. |
 | 31 Jul 2026 | Project 4 – Evidence Enricher | `<commit>` | Learned command-line argument processing, standard library usage (`statistics`, `uuid`, `datetime`), procedural data pipelines, exception-driven conversion, and iterative API design through code reviews. |
+| 1 Aug 2026 | Project 5 – Decision Engine Test Harness | `<commit>` | Learned specification-first testing, behavioural reasoning, regression prevention, boundary-value analysis, exception testing, pure-function design, and designing software around testability.
 
 ---
 
@@ -255,6 +320,7 @@ Progress is measured by improvements in engineering judgment and independent pro
 | After Project 2 | **1.0 / 5** | **1.3 / 5** | **0.9 / 5** | Managing state, structured debugging, and recognizing algorithmic patterns. |
 | After Project 3 | **1.5 / 5** | **1.6 / 5** | **1.0 / 5** | Reusable validation routines, exception handling, and cleaner procedural decomposition. |
 | After Project 4 | **1.5 / 5** | **1.8 / 5** | **1.2 / 5** | Standard library usage, command-line processing, API reasoning, and stronger engineering discussions. |
+| After Project 5 | **1.8 / 5** | **2.1 / 5** | **1.2 / 5** | Specification-first development, behavioural testing, regression prevention, pure functions, and stronger engineering reasoning.
 
 ---
 
@@ -264,8 +330,10 @@ The purpose of this repository is **not** to accumulate completed projects.
 
 Its purpose is to document the gradual development from beginner to software engineer through deliberate practice, rigorous code reviews, disciplined debugging, incremental improvement, and continuous reflection.
 
-Every project should leave behind evidence of improved engineering judgment, cleaner code organization, stronger problem decomposition, greater architectural thinking, and increased independence compared to the previous project.
+Every project should leave behind evidence of improved engineering judgment, cleaner code organization, stronger problem decomposition, greater architectural thinking, increased software quality, and increased independence compared to the previous project.
 
 Success will be measured by the ability to independently design, build, explain, test, debug, refactor, and maintain production-quality software systems with minimal AI assistance.
 
-The long-term target is not merely becoming a Python developer. It is becoming a highly sought-after Software Engineer, Technical Consultant, and Software Architect capable of designing and reasoning about complex software systems with confidence, clarity, and sound engineering judgment.
+The long-term target is not merely becoming a Python developer.
+
+It is becoming a highly sought-after Software Engineer, Technical Consultant, and Software Architect capable of designing and reasoning about complex software systems with confidence, clarity, sound engineering judgment, and deep technical understanding.
