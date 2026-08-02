@@ -23,6 +23,7 @@
 - Completed Week 3
 - Completed Week 4
 - Completed Week 5
+- Completed Week 6
 
 ### Problem Sets
 
@@ -32,6 +33,7 @@
 - Completed Problem Set 3
 - Completed Problem Set 4
 - Completed Problem Set 5
+- Completed Problem Set 6
 
 ### Personal Projects
 
@@ -41,7 +43,7 @@
 - Completed Project 3 – Resilient Intake Validator
 - Completed Project 4 – Evidence Enricher
 - Completed Project 5 – Decision Engine Test Harness
-
+- Completed Project 6 – Evidence Processing Pipeline
 ---
 
 ## Major concepts learned
@@ -117,6 +119,19 @@
 - Viewing tests as executable specifications
 - Beginning to design software for testability rather than adding tests afterwards
 
+### Project 6
+
+- Reading and writing CSV files using `csv.DictReader` and `csv.DictWriter`
+- Working with filesystem paths using `pathlib.Path`
+- Command-line validation for files and directories
+- Distinguishing filesystem state from API contracts
+- Designing explicit validation pipelines
+- Processing datasets record-by-record
+- Producing multiple output artifacts from a single processing pass
+- Recording multiple validation failures for a single record
+- Preserving source row numbers using `enumerate()`
+- Applying exceptions for business-rule validation
+- Beginning to reason about filesystem APIs instead of memorizing functions
 ---
 
 ## Key lessons from Project 2
@@ -177,6 +192,17 @@
 - Testing is not a separate activity—it influences software design itself.
 - Well-designed software becomes easier to explain, modify, and verify.
 
+## Key lessons from Project 6
+
+- Filesystem APIs only describe the current state of the filesystem; they cannot infer user intent.
+- API contracts should be explicit instead of relying on heuristics whenever possible.
+- Validation should establish assumptions before accessing dependent data.
+- Exceptions can represent business-rule violations in addition to conversion failures.
+- Traceability is an engineering feature; preserving original row numbers simplifies debugging.
+- A solution can be correct while still containing maintainability problems.
+- Repeated patterns should first be recognized before deciding whether they deserve abstraction.
+- Resource lifetime matters; repeatedly opening and closing files works but does not scale well.
+
 ---
 
 ## Biggest mindset shifts (Project 5)
@@ -187,6 +213,15 @@
 - I understand that software should be designed to be testable instead of forcing tests around poor designs.
 - I now separate user interaction from business logic almost instinctively.
 
+## Biggest mindset shifts (Project 6)
+
+- I now begin by understanding the specification before thinking about implementation.
+- I increasingly think in terms of behavioural contracts instead of isolated examples.
+- I now question what an API actually guarantees instead of assuming what I want it to do.
+- I distinguish between implementation decisions and software contracts.
+- I increasingly separate filesystem state from user intent.
+- I now spend more time reasoning about program behaviour before modifying code.
+- I have become more comfortable discussing engineering trade-offs instead of searching for a single "correct" implementation.
 ---
 
 ## Recurring Mistakes
@@ -200,6 +235,9 @@ Current recurring patterns observed:
 - Occasionally overlooking small defects introduced during refactoring (for example, renamed variables in return statements).
 - Occasionally focusing on individual examples before identifying every behavioural category required by the specification.
 - Sometimes reasoning about boundary values before reasoning about the expected business behaviour.
+- Sometimes combining multiple validation concerns into a single conditional instead of validating one assumption at a time.
+- Frequently recognizing duplicated implementation patterns only after they have already been written.
+- Occasionally focusing on making the current implementation work before considering long-term maintainability.
 
 ---
 
@@ -215,19 +253,25 @@ Current recurring patterns observed:
 - Better at predicting program behaviour before execution.
 - Beginning to defend engineering decisions using trade-offs rather than searching for one "correct" answer.
 - Treats testing as part of software design rather than post-development verification.
+- Increasingly reasons about API contracts instead of only Python syntax.
+- Frequently challenges assumptions instead of immediately implementing solutions.
+- Better at tracing program execution before changing code.
+- Increasingly considers edge cases before implementation.
+- Growing ability to explain *why* an implementation works instead of only *how* it works.
+- Beginning to think in terms of pipeline architecture rather than sequential scripts.
 
 ---
 
-## Confidence Rating after Project 5
+## Confidence Rating after Project 6
 
 Functions .................. 8/10
 Variables .................. 7/10
 Conditionals ............... 8/10
 Loops ...................... 8/10
-Input Validation ........... 8/10
+Input Validation ........... 9/10
 Exception Handling ......... 8/10
-Command-line Arguments ..... 7/10
-Standard Library Usage ..... 6/10
+Command-line Arguments ..... 8/10
+Standard Library Usage ..... 7/10
 Program Decomposition ...... 8/10
 Debugging .................. 8/10
 Code Organization .......... 8/10
@@ -243,25 +287,25 @@ Regression Thinking ........ 7/10
 
 ### Python
 
-Independent Python ability: **1.8 / 5**
+Independent Python ability: **2.0 / 5**
 
-I can independently design and implement small procedural console applications that use functions, parameters, conditionals, loops, exception handling, reusable validation routines, command-line arguments, standard library modules, and automated unit tests.
+Project 6 demonstrated sustained improvement in procedural application development. I can now independently design small command-line applications involving file processing, CSV parsing, input validation, exceptions, standard library modules, and multi-stage processing pipelines.
 
-I increasingly separate parsing, validation, business logic, and presentation into independent responsibilities. I now understand that software contracts should drive both implementation and testing, and I have begun designing functions specifically to improve testability rather than treating testing as an afterthought.
+I increasingly reason about API contracts before implementation and understand the distinction between parsing, validation, business rules, and presentation.
 
-I still require mentorship when designing larger architectures, identifying reusable abstractions across multiple modules, working with persistent data, object-oriented programming, packaging, decorators, generators, comprehensions, concurrency, and production-scale software systems.
+I still require mentorship when recognizing opportunities for abstraction, reducing duplication, designing reusable components, working with object-oriented programming, packaging, decorators, generators, concurrency, persistence, and larger multi-module systems.
 
 ### Software Engineering
 
-Current Software Engineering ability: **2.1 / 5**
+Current Software Engineering ability: **2.3 / 5**
 
-I increasingly think like an engineer rather than simply a programmer.
+Project 6 demonstrated measurable improvement in engineering reasoning.
 
-I begin by understanding specifications before implementation, reason about behavioural contracts instead of individual examples, and appreciate that engineering usually involves evaluating trade-offs rather than discovering a single correct solution.
+I increasingly discuss software in terms of contracts, assumptions, validation strategy, traceability, debugging methodology, and maintainability instead of focusing only on Python syntax.
 
-My debugging process is becoming more systematic and hypothesis-driven, and I increasingly justify implementation decisions using maintainability, readability, and separation of responsibilities.
+My debugging process has become more hypothesis-driven and I increasingly challenge assumptions before changing code.
 
-I still require significant mentorship when designing larger systems, identifying reusable abstractions, making architectural trade-offs, and independently organizing multi-module software.
+I still require mentorship when decomposing larger systems, recognizing reusable abstractions early, designing cohesive modules, managing resource lifetime, and making larger architectural trade-offs.
 
 ### Software Architecture
 
@@ -269,10 +313,9 @@ Current Architecture ability: **1.2 / 5**
 
 No rating increase.
 
-Although my software design has improved considerably through cleaner decomposition and testable business logic, I have not yet demonstrated enough architectural thinking around layering, interfaces, dependency management, coupling, cohesion, scalability, or maintainability at larger system sizes to justify a higher rating.
+Although I increasingly reason about software contracts and responsibilities, I have not yet demonstrated enough architectural thinking around layering, interfaces, dependency management, scalability, coupling, cohesion, or long-term maintainability to justify a higher rating.
 
-The objective remains unchanged: develop the ability to independently design, build, debug, test, explain, refactor, and maintain production-quality software systems with minimal AI assistance while steadily developing the engineering judgment required for software architecture.
-
+The objective remains unchanged: independently design, build, debug, explain, refactor, test, and maintain production-quality software systems while steadily developing software architecture judgement.
 ---
 
 ## Overall Progress
@@ -307,7 +350,7 @@ Progress is measured by improvements in engineering judgment and independent pro
 | 30 Jul 2026 | Project 3 – Resilient Intake Validator | `<commit>` | Learned reusable validation functions, exception handling, separation of conversion from validation, input sanitization, API-oriented function design, and recognizing common algorithms across multiple implementations. |
 | 31 Jul 2026 | Project 4 – Evidence Enricher | `<commit>` | Learned command-line argument processing, standard library usage (`statistics`, `uuid`, `datetime`), procedural data pipelines, exception-driven conversion, and iterative API design through code reviews. |
 | 1 Aug 2026 | Project 5 – Decision Engine Test Harness | `<commit>` | Learned specification-first testing, behavioural reasoning, regression prevention, boundary-value analysis, exception testing, pure-function design, and designing software around testability.
-
+| 2 Aug 2026 | Project 6 – Evidence Processing Pipeline | `<commit>` | Learned CSV processing, `pathlib`, filesystem validation, API contracts, traceability, pipeline-oriented processing, and disciplined debugging through iterative engineering reviews. |
 ---
 
 ## Overall Engineering Progress
@@ -321,6 +364,7 @@ Progress is measured by improvements in engineering judgment and independent pro
 | After Project 3 | **1.5 / 5** | **1.6 / 5** | **1.0 / 5** | Reusable validation routines, exception handling, and cleaner procedural decomposition. |
 | After Project 4 | **1.5 / 5** | **1.8 / 5** | **1.2 / 5** | Standard library usage, command-line processing, API reasoning, and stronger engineering discussions. |
 | After Project 5 | **1.8 / 5** | **2.1 / 5** | **1.2 / 5** | Specification-first development, behavioural testing, regression prevention, pure functions, and stronger engineering reasoning.
+| After Project 6 | **2.0 / 5** | **2.3 / 5** | **1.2 / 5** | CSV processing, filesystem reasoning, API contracts, structured validation, pipeline-oriented design, and stronger debugging discipline. |
 
 ---
 
