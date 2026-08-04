@@ -1,0 +1,126 @@
+{
+    "source_file": "sample_data\\business_document.txt",
+    "extracted_at": "2026-08-04T16:46:04.205154",
+    "contracts": [
+        {
+            "value": "CTR-2026-0042",
+            "start_position": 128
+        },
+        {
+            "value": "CTR-2025-0189",
+            "start_position": 399
+        },
+        {
+            "value": "CTR-2024-0001",
+            "start_position": 717
+        },
+        {
+            "value": "CTR-2027-1000",
+            "start_position": 1706
+        }
+    ],
+    "invoices": [
+        {
+            "value": "INV-1234567",
+            "start_position": 264
+        },
+        {
+            "value": "INV-7654321",
+            "start_position": 522
+        },
+        {
+            "value": "INV-0000001",
+            "start_position": 1758
+        }
+    ],
+    "amounts": [
+        {
+            "value": "$12,450.75",
+            "start_position": 300
+        },
+        {
+            "value": "$500",
+            "start_position": 334
+        },
+        {
+            "value": "$1,250",
+            "start_position": 552
+        },
+        {
+            "value": "$18,000",
+            "start_position": 612
+        },
+        {
+            "value": "$250.50",
+            "start_position": 648
+        },
+        {
+            "value": "$12.345",
+            "start_position": 1505
+        },
+        {
+            "value": "$1,000",
+            "start_position": 1802
+        },
+        {
+            "value": "$750",
+            "start_position": 1830
+        }
+    ],
+    "percentages": [
+        {
+            "value": "99.5%",
+            "start_position": 206
+        },
+        {
+            "value": "95%",
+            "start_position": 493
+        },
+        {
+            "value": "100%",
+            "start_position": 816
+        }
+    ],
+    "dates": [
+        {
+            "value": "2026-07-15",
+            "start_position": 55
+        },
+        {
+            "value": "2026-01-10",
+            "start_position": 152
+        },
+        {
+            "value": "2026-07-18",
+            "start_position": 282
+        },
+        {
+            "value": "2025-12-20",
+            "start_position": 429
+        },
+        {
+            "value": "2026-07-21",
+            "start_position": 537
+        },
+        {
+            "value": "2024-11-30",
+            "start_position": 748
+        },
+        {
+            "value": "2026-7-18",
+            "start_position": 1494
+        },
+        {
+            "value": "2027-01-01",
+            "start_position": 1737
+        },
+        {
+            "value": "2027-02-14",
+            "start_position": 1787
+        },
+        {
+            "value": "2026-02-30",
+            "start_position": 2180
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+ACME ENTERPRISES
+Quarterly Operations Review
+Prepared: 2026-07-15
+
+The modernization initiative continues according to Contract CTR-2026-0042 signed on 2026-01-10.
+The current service commitment guarantees 99.5% uptime across all production environments.
+
+Invoice INV-1234567 dated 2026-07-18 totals $12,450.75.
+An advance payment of $500 has already been received.
+
+A secondary agreement, Contract CTR-2025-0189, was renewed on 2025-12-20.
+This agreement specifies a minimum service level of 95%.
+
+Finance issued Invoice INV-7654321 on 2026-07-21 for $1,250.
+
+The customer also approved a maintenance budget of $18,000.
+An emergency allocation of $250.50 was later authorized.
+
+Historical records reference Contract CTR-2024-0001 which expired on 2024-11-30.
+
+The target operational efficiency is expected to reach 100% after the migration.
+
+----------------------------------------------------
+Duplicate references (should only appear once)
+----------------------------------------------------
+
+Contract CTR-2026-0042 remains the governing agreement.
+Invoice INV-1234567 is still outstanding.
+The SLA target remains 99.5%.
+The approved amount remains $12,450.75.
+The implementation date remains 2026-07-18.
+
+----------------------------------------------------
+Invalid values (should NOT be extracted)
+----------------------------------------------------
+
+CTR-26-0042
+CTR2026-0042
+CTR-2026-42
+CTR-2026-123
+CTR-20266-0001
+
+INV1234567
+INV-123456
+INV-12345678
+INV_1234567
+
+2026/07/18
+18-07-2026
+2026-7-18
+
+$12.345
+$$500
+500$
+USD 500
+
+99
+99.500
+99 percent
+95 percent
+
+----------------------------------------------------
+Additional valid values
+----------------------------------------------------
+
+Contract CTR-2027-1000 enters effect on 2027-01-01.
+
+Invoice INV-0000001 was generated on 2027-02-14 for $1,000.
+
+A bonus payment of $750 will be processed.
+
+Availability improved from 95% to 99.5% before finally reaching 100%.
+
+Contract CTR-2027-1000 supersedes previous agreements.
+
+Invoice INV-0000001 has already been paid.
+
+----------------------------------------------------
+Regex limitation examples
+----------------------------------------------------
+
+The placeholder date 2026-02-30 appears in legacy documentation.
+
+Another impossible date is 2025-13-45.
+
+Although these are not real calendar dates, their format matches YYYY-MM-DD.
+
+End of report.

@@ -132,6 +132,19 @@
 - Preserving source row numbers using `enumerate()`
 - Applying exceptions for business-rule validation
 - Beginning to reason about filesystem APIs instead of memorizing functions
+
+### Project 7
+
+- Reading and writing JSON using the `json` module
+- Extracting structured information using regular expressions
+- Using `re.finditer()` to preserve match positions
+- Building structured JSON documents from extracted data
+- Working with timestamps using `datetime`
+- Distinguishing extraction from validation
+- Removing duplicate records while preserving first occurrence order
+- Beginning to reason about token boundaries instead of only matching patterns
+- Introduction to lookbehind assertions for context-sensitive matching
+
 ---
 
 ## Key lessons from Project 2
@@ -203,6 +216,18 @@
 - Repeated patterns should first be recognized before deciding whether they deserve abstraction.
 - Resource lifetime matters; repeatedly opening and closing files works but does not scale well.
 
+## Key lessons from Project 7
+
+- Parsing and validation are different responsibilities and should remain separate whenever practical.
+- Regular expressions are effective at identifying candidate tokens but are often the wrong place to enforce complex business rules.
+- Structured data extraction is easier to maintain when processing follows distinct stages: extraction, validation, deduplication, and serialization.
+- Context matters in parsing; token boundaries are just as important as the token pattern itself.
+- Lookaround assertions allow surrounding context to be validated without becoming part of the matched result.
+- Building reliable regular expressions requires adversarial testing using invalid, boundary, and malformed inputs rather than only successful examples.
+- Correct software should still be challenged with additional edge cases because passing initial tests does not imply robustness.
+- JSON is a serialization format with a limited set of supported data types; Python objects often require conversion before serialization.
+- Good engineering discussions increasingly involve deciding which responsibility belongs in regex and which belongs in program logic.
+
 ---
 
 ## Biggest mindset shifts (Project 5)
@@ -222,6 +247,15 @@
 - I increasingly separate filesystem state from user intent.
 - I now spend more time reasoning about program behaviour before modifying code.
 - I have become more comfortable discussing engineering trade-offs instead of searching for a single "correct" implementation.
+
+## Biggest mindset shifts (Project 7)
+
+- I increasingly distinguish between identifying candidate data and validating business rules.
+- I now think of parsing as a sequence of processing stages rather than as a single regular expression.
+- I have become more deliberate about deciding which responsibilities belong in regex and which belong in Python code.
+- I increasingly design small processing pipelines instead of writing one continuous procedural solution.
+- I now challenge my own implementations by intentionally constructing invalid and boundary test cases instead of assuming successful examples are sufficient.
+- I have started thinking about token boundaries and parsing context instead of only matching text patterns.
 ---
 
 ## Recurring Mistakes
@@ -238,6 +272,11 @@ Current recurring patterns observed:
 - Sometimes combining multiple validation concerns into a single conditional instead of validating one assumption at a time.
 - Frequently recognizing duplicated implementation patterns only after they have already been written.
 - Occasionally focusing on making the current implementation work before considering long-term maintainability.
+- Sometimes attempts to solve parsing problems entirely within regular expressions before considering whether simpler validation logic would produce a clearer design.
+- Occasionally focuses on making individual patterns work before stepping back to define the overall parsing strategy.
+- Still tends to discover reusable abstractions after implementation rather than recognizing them during design.
+- Occasionally spends excessive time perfecting individual implementation details before confirming that the overall architecture is sound.
+- Still developing intuition for token boundaries, parser context, and where responsibility should be divided between extraction and validation.
 
 ---
 
@@ -259,6 +298,12 @@ Current recurring patterns observed:
 - Increasingly considers edge cases before implementation.
 - Growing ability to explain *why* an implementation works instead of only *how* it works.
 - Beginning to think in terms of pipeline architecture rather than sequential scripts.
+  - Increasingly separates software into distinct processing stages instead of solving everything in a single block of logic.
+- Begins challenging whether a responsibility belongs in parsing, validation, or serialization before implementing it.
+- More willing to question proposed solutions when they do not align with the intended design.
+- Increasingly builds adversarial test cases to expose defects instead of relying only on successful examples.
+- Growing understanding that software design decisions often involve responsibility allocation rather than algorithm selection.
+- Becoming more comfortable reasoning about parser behaviour by tracing how the matching engine evaluates input.
 
 ---
 
@@ -289,33 +334,31 @@ Regression Thinking ........ 7/10
 
 Independent Python ability: **2.0 / 5**
 
-Project 6 demonstrated sustained improvement in procedural application development. I can now independently design small command-line applications involving file processing, CSV parsing, input validation, exceptions, standard library modules, and multi-stage processing pipelines.
+Project 7 demonstrated growing confidence using Python's standard library, regular expressions, JSON serialization, and structured data processing.
 
-I increasingly reason about API contracts before implementation and understand the distinction between parsing, validation, business rules, and presentation.
+I increasingly distinguish between parsing, validation, deduplication, and serialization as separate responsibilities rather than combining them into one implementation.
 
-I still require mentorship when recognizing opportunities for abstraction, reducing duplication, designing reusable components, working with object-oriented programming, packaging, decorators, generators, concurrency, persistence, and larger multi-module systems.
+I still require mentorship when recognizing reusable abstractions early, designing reusable modules, writing object-oriented software, organizing larger codebases, and using more advanced Python language features naturally without experimentation.
 
 ### Software Engineering
 
 Current Software Engineering ability: **2.3 / 5**
 
-Project 6 demonstrated measurable improvement in engineering reasoning.
+Project 7 reinforced improvements in engineering reasoning rather than Python syntax.
 
-I increasingly discuss software in terms of contracts, assumptions, validation strategy, traceability, debugging methodology, and maintainability instead of focusing only on Python syntax.
+I increasingly reason about responsibility allocation, processing stages, parsing strategy, validation boundaries, and data representation before implementation.
 
-My debugging process has become more hypothesis-driven and I increasingly challenge assumptions before changing code.
-
-I still require mentorship when decomposing larger systems, recognizing reusable abstractions early, designing cohesive modules, managing resource lifetime, and making larger architectural trade-offs.
+I still require mentorship when identifying abstractions before implementation, designing cohesive components, evaluating long-term maintainability, and making architectural trade-offs across larger systems.
 
 ### Software Architecture
 
-Current Architecture ability: **1.2 / 5**
-
 No rating increase.
 
-Although I increasingly reason about software contracts and responsibilities, I have not yet demonstrated enough architectural thinking around layering, interfaces, dependency management, scalability, coupling, cohesion, or long-term maintainability to justify a higher rating.
+Project 7 showed early evidence of thinking in terms of processing pipelines and responsibility separation.
 
-The objective remains unchanged: independently design, build, debug, explain, refactor, test, and maintain production-quality software systems while steadily developing software architecture judgement.
+However, I have not yet demonstrated sustained architectural reasoning involving modular boundaries, interfaces, dependency management, extensibility, coupling, cohesion, or system-level design decisions.
+
+The long-term objective remains unchanged: independently design, build, debug, explain, refactor, test, and maintain production-quality software systems while steadily developing software architecture judgement.
 ---
 
 ## Overall Progress
@@ -351,6 +394,7 @@ Progress is measured by improvements in engineering judgment and independent pro
 | 31 Jul 2026 | Project 4 – Evidence Enricher | `<commit>` | Learned command-line argument processing, standard library usage (`statistics`, `uuid`, `datetime`), procedural data pipelines, exception-driven conversion, and iterative API design through code reviews. |
 | 1 Aug 2026 | Project 5 – Decision Engine Test Harness | `<commit>` | Learned specification-first testing, behavioural reasoning, regression prevention, boundary-value analysis, exception testing, pure-function design, and designing software around testability.
 | 2 Aug 2026 | Project 6 – Evidence Processing Pipeline | `<commit>` | Learned CSV processing, `pathlib`, filesystem validation, API contracts, traceability, pipeline-oriented processing, and disciplined debugging through iterative engineering reviews. |
+| 4 Aug 2026 | Project 7 – Signal Extractor | `<commit>` | Learned JSON serialization, regular-expression based extraction, parser pipeline design, token boundaries, lookaround assertions, duplicate elimination, and separating extraction from validation. |
 ---
 
 ## Overall Engineering Progress
@@ -365,7 +409,7 @@ Progress is measured by improvements in engineering judgment and independent pro
 | After Project 4 | **1.5 / 5** | **1.8 / 5** | **1.2 / 5** | Standard library usage, command-line processing, API reasoning, and stronger engineering discussions. |
 | After Project 5 | **1.8 / 5** | **2.1 / 5** | **1.2 / 5** | Specification-first development, behavioural testing, regression prevention, pure functions, and stronger engineering reasoning.
 | After Project 6 | **2.0 / 5** | **2.3 / 5** | **1.2 / 5** | CSV processing, filesystem reasoning, API contracts, structured validation, pipeline-oriented design, and stronger debugging discipline. |
-
+| After Project 7 | **2.0 / 5** | **2.3 / 5** | **1.2 / 5** | JSON serialization, regular-expression based parsing, token-boundary reasoning, separation of extraction from validation, parser pipeline thinking, and more disciplined engineering discussions around responsibility allocation. |
 ---
 
 ## Long-Term Objective
